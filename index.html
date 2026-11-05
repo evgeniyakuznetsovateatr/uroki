@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* базовый сброс (раньше его добавляла платформа артефактов) */
+html{-webkit-text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Уроки актерского мастерства</title>
+<meta name="description" content="Уроки актерского мастерства для взрослых 18+ в Яблоновском. Пробное занятие 10 ноября 2026, вторник 19:30, Дорожная, 150.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,500&family=Manrope:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: a theatre programme — dark velvet hero with a brass "ticket", then calm paper sections; the course is a stage path from first lesson to premiere. */
+:root{
+  --paper:#F5EEE6;
+  --paper-2:#EADCCA;
+  --ink:#24161A;
+  --ink-soft:#5A474B;
+  --velvet:#4A1520;
+  --velvet-deep:#2A0F14;
+  --brass:#A8751F;
+  --brass-on-dark:#E8B04B;
+  --line:#D9CBBB;
+  --on-velvet:#F6EBDD;
+  --on-velvet-soft:#D9C3B4;
+  --display:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body:'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1B1214; --paper-2:#24181B; --ink:#F3E7DC; --ink-soft:#C3B0A8;
+    --velvet:#3A0F18; --velvet-deep:#140809; --brass:#E2AA4A; --brass-on-dark:#E8B04B;
+    --line:#3E2E31; --on-velvet:#F6EBDD; --on-velvet-soft:#D9C3B4; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1B1214; --paper-2:#24181B; --ink:#F3E7DC; --ink-soft:#C3B0A8;
+  --velvet:#3A0F18; --velvet-deep:#140809; --brass:#E2AA4A; --brass-on-dark:#E8B04B;
+  --line:#3E2E31; --on-velvet:#F6EBDD; --on-velvet-soft:#D9C3B4; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.08}
+p{margin:0}
+a{color:var(--brass)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brass-on-dark);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(clamp(24px, 5vw, 48px), env(safe-area-inset-left, 0px));padding-right:max(clamp(24px, 5vw, 48px), env(safe-area-inset-right, 0px))}
+.eyebrow{font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";flex:none;width:32px;height:2px;background:currentColor}
+section{padding-block:88px;position:relative}
+/* section rhythm: paper → tint → velvet band, with a curtain valance hanging under each velvet band */
+.tint{background:var(--paper-2)}
+.band-velvet{--paper:var(--velvet-deep);--paper-2:rgba(246,235,221,.07);--ink:var(--on-velvet);--ink-soft:var(--on-velvet-soft);--line:rgba(246,235,221,.22);--brass:var(--brass-on-dark);
+  background:var(--velvet-deep);color:var(--ink);border-top:4px solid var(--brass-on-dark)}
+.band-velvet h2,.band-velvet h3{color:#FFF6EA}
+.scallop-top{padding-top:116px}
+.scallop-top::before{content:"";position:absolute;left:0;right:0;top:0;height:18px;pointer-events:none;
+  background:radial-gradient(circle at 50% 0, var(--velvet-deep) 0 14px, transparent 15px) 0 0/32px 18px repeat-x}
+.scallop-top::after{content:"";position:absolute;left:0;right:0;top:22px;height:2px;pointer-events:none;
+  background:repeating-linear-gradient(90deg, var(--brass) 0 3px, transparent 3px 16px);opacity:.55}
+.lead{font-size:19px;color:var(--ink-soft);max-width:62ch}
+
+/* hero */
+.hero{background:var(--velvet-deep);color:var(--on-velvet);position:relative;overflow:hidden;border:0}
+.hero::before,.hero::after{content:"";position:absolute;top:0;bottom:0;width:min(9vw,110px);
+  background:repeating-linear-gradient(90deg,var(--velvet) 0 14px,#5B1B28 14px 22px,var(--velvet) 22px 34px);opacity:.9}
+.hero::before{left:0;border-right:3px solid rgba(232,176,75,.35)}
+.hero::after{right:0;border-left:3px solid rgba(232,176,75,.35)}
+.hero .wrap{position:relative;z-index:1;padding-block:80px 72px;display:grid;gap:40px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center}
+.hero-text{padding-left:min(7vw,90px);min-width:0;display:flex;flex-direction:column;gap:22px}
+.hero .eyebrow{color:var(--brass-on-dark)}
+.hero h1{font-size:clamp(40px,6.4vw,76px);font-weight:900;color:#FFF6EA}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--brass-on-dark)}
+.hero p.sub{font-size:20px;color:var(--on-velvet-soft);max-width:34ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font:800 16px/1 var(--body);text-decoration:none;cursor:pointer;border:2px solid transparent}
+.btn-brass{background:var(--brass-on-dark);color:#2A0F14}
+.btn-brass:hover{background:#F2C879}
+.btn-ghost{border-color:rgba(246,235,221,.5);color:var(--on-velvet);background:transparent}
+.btn-ghost:hover{border-color:var(--on-velvet)}
+
+.ticket{background:#F6EBDD;color:#24161A;border-radius:18px;position:relative;transform:rotate(-2.5deg);margin-right:min(7vw,90px);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:34px;height:34px;margin-top:-17px;border-radius:50%;background:var(--velvet-deep)}
+.ticket::before{left:-17px}.ticket::after{right:-17px}
+.ticket-in{padding:28px 34px;display:grid;gap:14px}
+.ticket .t-label{font-weight:800;font-size:11px;letter-spacing:.2em;color:#8A6A2E;text-transform:uppercase}
+.ticket .t-big{font-family:var(--display);font-weight:900;font-size:34px;line-height:1.05}
+.ticket .t-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:2px dashed #C9B79E;padding-top:14px}
+.ticket .t-val{font-weight:700;font-size:16px;line-height:1.35}
+
+/* benefits */
+.benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 40px;margin-top:40px}
+.benefit h3{font-size:24px;margin-bottom:8px}
+.benefit p{color:var(--ink-soft)}
+.benefit .mark{font-family:var(--display);font-style:italic;font-size:15px;color:var(--brass);margin-bottom:6px}
+
+/* teacher */
+.teacher{background:var(--paper-2)}
+.teacher-grid{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.portrait{position:sticky;top:32px;margin:0;align-self:start}
+@media (max-width:860px){.portrait{position:relative;top:auto}}
+.portrait img{display:block;width:100%;max-width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:6px solid var(--paper);box-shadow:0 0 0 2px var(--brass)}
+.portrait figcaption{margin-top:16px;font-family:var(--display);font-style:italic;font-size:18px;color:var(--ink-soft)}
+.teacher h2{font-size:clamp(36px,5vw,56px);margin-top:12px}
+.teacher .role{font-family:var(--display);font-style:italic;font-size:22px;color:var(--brass);margin-top:6px}
+.story{display:grid;gap:16px;margin-top:22px;max-width:62ch}
+.story p{color:var(--ink-soft)}
+.story p b{color:var(--ink)}
+.facts{list-style:none;margin:40px 0 0;padding:0;border-top:2px solid var(--ink);display:grid}
+.facts li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding-block:14px;border-bottom:1px solid var(--line)}
+.facts .y{font-family:var(--display);font-weight:700;font-size:18px;font-variant-numeric:tabular-nums;color:var(--brass)}
+.facts p{min-width:0}
+.facts small{display:block;color:var(--ink-soft);font-size:15px}
+
+.skill-list{list-style:none;margin:40px 0 0;padding:0;border-top:2px solid var(--ink)}
+.skill-list li{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.4fr);gap:12px 48px;padding-block:26px;border-bottom:1px solid var(--line);align-items:baseline}
+.skill-list h3{font-size:clamp(24px,3vw,30px)}
+.skill-list .skill-text{display:grid;gap:8px;min-width:0}
+.skill-list p{color:var(--ink-soft);max-width:60ch}
+.skill-list .in-life{color:var(--ink);font-size:15.5px}
+.skill-list .in-life b{color:var(--brass);font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-right:8px}
+@media (max-width:760px){.skill-list li{grid-template-columns:minmax(0,1fr)}}
+
+/* teacher facts + story */
+.teacher-lead{margin-top:20px;font-size:18px;color:var(--ink);max-width:60ch}
+.facts-grid{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.fact{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.fact:hover{transform:translateY(-2px);border-color:var(--brass);box-shadow:0 10px 24px -14px rgba(42,15,20,.45)}
+.fact b{font-family:var(--display);font-size:19px;line-height:1.2}
+.fact span{font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+.teacher-actions{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 28px;margin-top:24px}
+.story-more{min-width:0}
+.story-more[open]{flex-basis:100%;order:2}
+.story-more summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:15px;color:var(--brass);border-bottom:2px solid currentColor;padding-bottom:2px}
+.story-more summary::-webkit-details-marker{display:none}
+.story-more summary::after{content:"↓";transition:transform .25s ease}
+.story-more[open] summary::after{transform:rotate(180deg)}
+.story-more .sm-close,.story-more[open] .sm-open{display:none}
+.story-more[open] .sm-close{display:inline}
+.story-more .story{margin-top:18px}
+.to-gallery{display:inline-block;margin-top:22px;font-weight:700;font-size:15px;color:var(--ink-soft);text-decoration:none}
+.to-gallery:hover{color:var(--brass)}
+@media (max-width:520px){.facts-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* gallery section */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.tab{font:700 14px/1 var(--body);padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink-soft);cursor:pointer;transition:all .2s ease}
+.tab:hover{color:var(--ink);border-color:var(--brass)}
+.tab[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--velvet-deep)}
+.masonry{margin-top:30px;column-count:3;column-gap:14px}
+.m-item{break-inside:avoid;margin:0 0 14px;position:relative;border-radius:14px;overflow:hidden;background:rgba(246,235,221,.06)}
+.m-item .ph{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.m-item img{display:block;width:100%;height:auto;transition:transform .5s ease}
+.m-item:hover img{transform:scale(1.04)}
+.m-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 12px;font-size:13.5px;line-height:1.35;font-weight:600;color:#FFF6EA;background:linear-gradient(to top,rgba(20,8,10,.88),rgba(20,8,10,0));pointer-events:none;opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease}
+.m-item:hover figcaption,.m-item:focus-within figcaption{opacity:1;transform:none}
+@media (hover:none){.m-item figcaption{opacity:1;transform:none}}
+.more-row{display:flex;justify-content:center;margin:10px 0 18px}
+.more-row[hidden]{display:none}
+.gal-hint{margin-top:6px;font-family:var(--display);font-style:italic;color:var(--ink-soft)}
+@media (max-width:860px){.masonry{column-count:2;column-gap:10px}.m-item{margin-bottom:10px}}
+@media (prefers-reduced-motion:reduce){.m-item img,.fact,.m-item figcaption{transition:none}}
+
+/* gallery + lightbox */
+.gallery{margin:4px 0 8px;display:grid;gap:22px}
+.gal-title{font-family:var(--display);font-style:italic;font-size:16px;color:var(--ink-soft);margin:10px 0 0}
+.gallery ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.gallery .ph{display:block;width:100%;padding:0;border:0;border-radius:10px;overflow:hidden;cursor:zoom-in;background:var(--paper);aspect-ratio:1/1}
+.gallery .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.gallery .ph:hover img{transform:scale(1.04)}
+.gallery .ph:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.gallery figcaption{margin-top:-8px;font-family:var(--display);font-style:italic;font-size:16px;color:var(--ink-soft)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(14,6,8,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:max(56px, env(safe-area-inset-top,0px)) max(16px, env(safe-area-inset-right,0px)) max(24px, env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px))}
+.lb img{max-width:min(100%,1100px);max-height:calc(100% - 70px);object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb p{color:#F6EBDD;font-family:var(--display);font-style:italic;font-size:18px;text-align:center;margin:0}
+.lb button{position:absolute;background:rgba(246,235,221,.12);color:#F6EBDD;border:1px solid rgba(246,235,221,.35);width:48px;height:48px;border-radius:50%;font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lb button:hover{background:rgba(246,235,221,.24)}
+.lb .x{top:max(12px, env(safe-area-inset-top,0px));right:max(12px, env(safe-area-inset-right,0px))}
+.lb .prev{left:max(12px, env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
+.lb .next{right:max(12px, env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
+@media (max-width:520px){.lb .prev,.lb .next{top:auto;bottom:max(16px, env(safe-area-inset-bottom,0px));transform:none}.lb img{max-height:calc(100% - 130px)}}
+@media (prefers-reduced-motion:reduce){.gallery .ph img{transition:none}}
+
+/* path */
+.path{margin-top:44px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;position:relative}
+.stop{padding:0 26px 0 0;position:relative;min-width:0}
+.stop .when{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.stop .dot{width:18px;height:18px;border-radius:50%;background:var(--paper);border:4px solid var(--brass);margin:14px 0 18px;position:relative;z-index:1}
+.stop:not(:last-child) .dot::after{content:"";position:absolute;left:14px;top:3px;height:4px;width:calc(var(--w,320px));background:var(--line);z-index:-1}
+.stop h3{font-size:26px;margin-bottom:10px}
+.stop p{color:var(--ink-soft)}
+.stop.final .dot{background:var(--brass)}
+.theatre-note{margin-top:40px;padding:22px 26px;background:var(--paper-2);border-radius:14px;display:flex;gap:18px;align-items:flex-start}
+.theatre-note svg{flex:none;color:var(--brass)}
+.theatre-note p{min-width:0}
+
+/* schedule */
+.sched{margin-top:36px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:840px}
+.slot{border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:6px}
+.slot .day{font-family:var(--display);font-weight:700;font-size:26px}
+.slot .time{font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.slot p{color:var(--ink-soft);font-size:15px}
+.slot.main{border-color:var(--brass);border-width:2px}
+.tag{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--paper-2);color:var(--ink-soft)}
+.slot.main .tag{background:var(--brass);color:var(--paper)}
+
+/* prices */
+.price-grid{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.plan{border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+.plan.feat{background:var(--velvet-deep);color:var(--on-velvet);border-color:var(--velvet-deep)}
+.plan .p-name{font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+.plan.feat .p-name{color:var(--brass-on-dark)}
+.plan .p-price{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;font-variant-numeric:tabular-nums}
+.plan .p-per{font-size:15px;color:var(--ink-soft)}
+.plan.feat .p-per,.plan.feat .p-desc{color:var(--on-velvet-soft)}
+.plan .p-desc{font-size:15.5px;color:var(--ink-soft)}
+.extras{margin-top:28px}
+.extras table{width:100%;border-collapse:collapse;font-size:16px}
+@media (max-width:600px){
+  .extras table tr{display:flex;flex-direction:column;gap:6px;padding-block:14px;border-bottom:1px solid var(--line)}
+  .extras table td,.extras table td:last-child{display:block;padding:0;border:0;text-align:left;white-space:normal}
+  .extras table td:last-child{font-size:18px}
+}
+.extras td{padding:14px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.extras td:last-child{text-align:right;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.extras td small{display:block;color:var(--ink-soft);font-size:14px;font-weight:500}
+
+/* trial */
+.trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.trial-card{background:var(--paper-2);border-radius:18px;padding:30px;display:grid;gap:16px}
+.trial-card .big{font-family:var(--display);font-weight:900;font-size:40px;line-height:1}
+.trial-card .cond{font-size:18px;font-weight:700}
+.steps{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-weight:900;font-size:22px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--brass);color:var(--brass)}
+
+/* rules / faq */
+.faq{margin-top:30px;display:grid;gap:0;max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:26px;line-height:1;color:var(--brass);flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin-top:10px;color:var(--ink-soft);max-width:68ch}
+
+/* contacts */
+.contact{background:var(--velvet-deep);color:var(--on-velvet);border-top:4px solid var(--brass-on-dark)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:center}
+.contact h2{font-size:clamp(34px,5vw,54px);color:#FFF6EA}
+.contact .eyebrow{color:var(--brass-on-dark)}
+.contact p{color:var(--on-velvet-soft)}
+.phone-box{border:2px solid rgba(232,176,75,.6);border-radius:18px;padding:28px;display:grid;gap:14px}
+.phone{font-family:var(--display);font-weight:900;font-size:clamp(30px,4.4vw,42px);color:#FFF6EA;font-variant-numeric:tabular-nums;user-select:all}
+.copy-msg{font-size:14px;min-height:1.4em;color:var(--brass-on-dark)}
+.addr{display:grid;gap:4px;padding-top:14px;border-top:1px solid rgba(246,235,221,.2)}
+.addr b{color:#FFF6EA;font-size:18px}
+
+footer{padding-block:28px;font-size:14px;color:var(--ink-soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:860px){
+  .hero .wrap,.trial,.contact .wrap,.teacher-grid{grid-template-columns:minmax(0,1fr)}
+  .portrait{max-width:360px}
+  .hero-text{padding-left:min(9vw,48px);padding-right:min(9vw,48px)}
+  .ticket{margin:0 min(9vw,48px);transform:rotate(-1.5deg)}
+  .benefits,.sched,.price-grid{grid-template-columns:minmax(0,1fr)}
+  .path{grid-template-columns:minmax(0,1fr);gap:30px;border-left:4px solid var(--line);padding-left:22px;margin-left:8px}
+  .stop{padding:0}
+  .stop .dot{position:absolute;left:-35px;top:0;margin:0}
+  .stop .dot::after{display:none}
+  .stop .when{margin-bottom:8px}
+}
+@media (max-width:520px){
+  .hero::before,.hero::after{width:10px}
+  .hero-text{padding-left:12px;padding-right:12px}
+  .ticket{margin:0 14px}
+  .ticket-in{padding:24px 26px}
+  section{padding-block:56px}
+  .facts li{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .ticket{transition:transform .4s ease}
+  .ticket:hover{transform:rotate(0deg)}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Яблоновский · 18+</p>
+      <h1>Уроки актерского мастерства <em>для взрослых</em></h1>
+      <p class="sub">Помните, как в детстве хотелось выйти на сцену? Самое время вернуться к этой мечте. Опыт не нужен.</p>
+      <div class="cta-row">
+        <a class="btn btn-brass" href="#contact">Записаться на пробное</a>
+        <a class="btn btn-ghost" href="#teacher">О педагоге</a>
+      </div>
+    </div>
+    <div class="ticket" aria-label="Коротко о пробном занятии">
+      <div class="ticket-in">
+        <p class="t-label">Билет · Премьера сезона</p>
+        <p class="t-big">Пробное — 10 ноября</p>
+        <div class="t-row">
+          <div><p class="t-label">Время</p><p class="t-val">19:30–21:30</p></div>
+          <div><p class="t-label">Место</p><p class="t-val">Дорожная, 150</p></div>
+        </div>
+        <div class="t-row">
+          <div><p class="t-label">Абонемент</p><p class="t-val">от 3 600 ₽ в месяц</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about" class="scallop-top">
+  <div class="wrap">
+    <p class="eyebrow">Что вы получите</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Вечер в неделю, когда вы — просто вы</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <p class="mark">голос</p>
+        <h3>Говорите так, чтобы вас слушали</h3>
+        <p>Сценическая речь и дыхание. Голос не садится, когда на вас смотрят, а тост на празднике перестает быть стрессом.</p>
+      </div>
+      <div class="benefit">
+        <p class="mark">уверенность</p>
+        <h3>Спокойно на публике</h3>
+        <p>Снимаем зажимы, учимся держать внимание и паузу. Пригодится на собрании, собеседовании и в любом разговоре.</p>
+      </div>
+      <div class="benefit">
+        <p class="mark">отдых</p>
+        <h3>Игра, смех и новые знакомые</h3>
+        <p>Импровизация и актерский тренинг в небольшой группе. Роли «по долгу» оставьте за дверью.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="teacher" class="teacher">
+  <div class="wrap teacher-grid">
+    <figure class="portrait">
+      <img src="assets/evgenia.jpg" alt="Евгения Кузнецова, педагог по актерскому мастерству" width="440" height="440">
+    </figure>
+    <div style="min-width:0">
+      <p class="eyebrow">Педагог</p>
+      <h2>Евгения Кузнецова</h2>
+      <p class="role">Сцена, эфир и люди без опыта — ее профессия</p>
+      <div class="story">
+        <p>По образованию Евгения — режиссер театрализованных представлений и праздников. Она окончила факультет театрального искусства <b>Краснодарского университета культуры и искусств</b>.</p>
+        <p>Начинала свой путь в <b>Центре культуры города Краснодара</b> в качестве режиссера. Придумывала концепции, писала сценарии, собирала творческие коллективы, вела репетиции и сами мероприятия.</p>
+        <p>Параллельно с этим была преподавателем актерского мастерства в <b>Краснодарском архитектурно-строительном техникуме</b>, руководителем театральной студии <b>«Четвертая стена»</b>. Вместе со студентами выступала на различных площадках города, занимала призовые места на конкурсах и фестивалях.</p>
+        <p>В 2015 году переехала в Москву, где проработала 5 лет на <b>телевидении</b> в таких телепроектах, как «Голос», «Голос. Дети», «Модный приговор», «Два голоса», «Достояние республики», «Без страховки», «Первая студия», «Время покажет», «Кто хочет стать миллионером?» и других. Организовывала работу массовки, то есть людей без актерского опыта, которым нужно быстро понять задачу и свободно держаться перед камерой.</p>
+        <p>Как артистка <b>Независимой клоунады «ДОЖ»</b> выступала на церемонии закрытия Кубка конфедераций FIFA 2017 в Санкт-Петербурге, на Burning Man Decompression 2015 в Москве и на Международном фестивале уличных театров «Театральный дворик» в Туле.</p>
+        <p>В 2017 году устроилась в команду редакторов <b>Первого канала</b>. За три года выросла до старшего видеоредактора: предлагала темы программ, искала героев, создавала видеоконтент и работала во время прямых эфиров.</p>
+        <p>На занятиях Евгения соединяет театральную школу и опыт телевидения. Она знает, как помочь человеку перестать зажиматься, найти свой голос и спокойно выйти к зрителям, даже если раньше он никогда этого не делал.</p>
+      </div>
+      <a class="to-gallery" href="#gallery">Смотреть фото со съемок ↓</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="band-velvet gallery-sec">
+  <div class="wrap">
+    <p class="eyebrow">Галерея</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">На сцене и в эфире</h2>
+    <div class="tabs" role="group" aria-label="Фильтр фото">
+      <button type="button" class="tab" data-filter="all" aria-pressed="true">Все</button>
+      <button type="button" class="tab" data-filter="tv" aria-pressed="false">Телепроекты</button>
+      <button type="button" class="tab" data-filter="1tv" aria-pressed="false">Работа в редакции</button>
+      <button type="button" class="tab" data-filter="doj" aria-pressed="false">«ДОЖ»</button>
+    </div>
+    <div class="masonry">
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-kreslo.jpg" data-caption="В кресле наставника на площадке «Голоса»"><img src="assets/tv/golos-kreslo-md.jpg" alt="В кресле наставника на площадке «Голоса»" width="640" height="640" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-deti-final.jpg" data-caption="После съемки «Голос. Дети»"><img src="assets/tv/golos-deti-final-md.jpg" alt="После съемки «Голос. Дети»" width="640" height="800" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-ploshadka.jpg" data-caption="На площадке «Голоса»"><img src="assets/tv/golos-ploshadka-md.jpg" alt="На площадке «Голоса»" width="640" height="530" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-final-beidzh.jpg" data-caption="Бейдж модератора финала «Голоса»"><img src="assets/tv/golos-final-beidzh-md.jpg" alt="Бейдж модератора финала «Голоса»" width="640" height="480" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-deti.jpg" data-caption="На съемках «Голос. Дети»"><img src="assets/tv/golos-deti-md.jpg" alt="На съемках «Голос. Дети»" width="640" height="800" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/golos-zal.jpg" data-caption="Перед зрителями на съемочной площадке"><img src="assets/tv/golos-zal-md.jpg" alt="Перед зрителями на съемочной площадке" width="640" height="640" loading="lazy"></button><figcaption>Музыкальное телешоу «Голос» и «Голос. Дети», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/modnyi-prigovor-1.jpg" data-caption="С художником Андреем Бартеневым в ток-шоу «Модный приговор»"><img src="assets/tv/modnyi-prigovor-1-md.jpg" alt="С художником Андреем Бартеневым в ток-шоу «Модный приговор»" width="640" height="640" loading="lazy"></button><figcaption>С художником Андреем Бартеневым в ток-шоу «Модный приговор», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/modnyi-prigovor-2.jpg" data-caption="В студии «Модного приговора»"><img src="assets/tv/modnyi-prigovor-2-md.jpg" alt="В студии «Модного приговора»" width="640" height="640" loading="lazy"></button><figcaption>Ток-шоу «Модный приговор», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/dva-golosa-1.jpg" data-caption="С Лолитой на музыкальном телешоу «Два голоса»"><img src="assets/tv/dva-golosa-1-md.jpg" alt="С Лолитой на музыкальном телешоу «Два голоса»" width="640" height="640" loading="lazy"></button><figcaption>С Лолитой на музыкальном телешоу «Два голоса», СТС</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/dostoyanie-1.jpg" data-caption="В новогодней декорации «Достояния республики»"><img src="assets/tv/dostoyanie-1-md.jpg" alt="В новогодней декорации «Достояния республики»" width="450" height="450" loading="lazy"></button><figcaption>Музыкальное телешоу «Достояние республики», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/bez-strahovki-1.jpg" data-caption="На съемках «Без страховки»"><img src="assets/tv/bez-strahovki-1-md.jpg" alt="На съемках «Без страховки»" width="640" height="800" loading="lazy"></button><figcaption>Спортивно-развлекательное телешоу «Без страховки», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/pervaya-studiya-1.jpg" data-caption="С микрофоном перед зрителями «Первой студии»"><img src="assets/tv/pervaya-studiya-1-md.jpg" alt="С микрофоном перед зрителями «Первой студии»" width="640" height="540" loading="lazy"></button><figcaption>Ток-шоу «Первая студия», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/pervaya-studiya-2.jpg" data-caption="На съемках «Первой студии»"><img src="assets/tv/pervaya-studiya-2-md.jpg" alt="На съемках «Первой студии»" width="640" height="800" loading="lazy"></button><figcaption>Ток-шоу «Первая студия», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/vremya-pokazhet-1.jpg" data-caption="С микрофоном на площадке «Время покажет»"><img src="assets/tv/vremya-pokazhet-1-md.jpg" alt="С микрофоном на площадке «Время покажет»" width="640" height="800" loading="lazy"></button><figcaption>Ток-шоу «Время покажет», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/millioner-1.jpg" data-caption="В студии «Кто хочет стать миллионером?»"><img src="assets/tv/millioner-1-md.jpg" alt="В студии «Кто хочет стать миллионером?»" width="640" height="640" loading="lazy"></button><figcaption>Телеигра «Кто хочет стать миллионером?», Первый канал</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/luchshii-drug-1.jpg" data-caption="Участники проекта «Мой лучший друг»"><img src="assets/tv/luchshii-drug-1-md.jpg" alt="Участники проекта «Мой лучший друг»" width="640" height="640" loading="lazy"></button><figcaption>Познавательная телепрограмма «Мой лучший друг», телеканал «МИР»</figcaption></figure>
+      <figure class="m-item" data-cat="tv"><button type="button" class="ph" data-full="assets/tv/luchshii-drug-2.jpg" data-caption="На съемках «Моего лучшего друга»"><img src="assets/tv/luchshii-drug-2-md.jpg" alt="На съемках «Моего лучшего друга»" width="640" height="640" loading="lazy"></button><figcaption>Познавательная телепрограмма «Мой лучший друг», телеканал «МИР»</figcaption></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-1.jpg" data-caption=""><img src="assets/1tv/1tv-1-md.jpg" alt="На съемках Первого канала" width="640" height="800" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-2.jpg" data-caption=""><img src="assets/1tv/1tv-2-md.jpg" alt="На съемках Первого канала" width="640" height="800" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-3.jpg" data-caption=""><img src="assets/1tv/1tv-3-md.jpg" alt="В прямом эфире Первого канала" width="640" height="412" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-4.jpg" data-caption=""><img src="assets/1tv/1tv-4-md.jpg" alt="На съемках Первого канала" width="640" height="640" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-5.jpg" data-caption=""><img src="assets/1tv/1tv-5-md.jpg" alt="За рабочим местом редактора в студии" width="640" height="799" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="1tv"><button type="button" class="ph" data-full="assets/1tv/1tv-6.jpg" data-caption=""><img src="assets/1tv/1tv-6-md.jpg" alt="В студии ток-шоу «Время покажет»" width="640" height="800" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="doj"><button type="button" class="ph" data-full="assets/doj/doj-teatr.jpg" data-caption=""><img src="assets/doj/doj-teatr-md.jpg" alt="Независимая клоунада «ДОЖ»" width="640" height="640" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="doj"><button type="button" class="ph" data-full="assets/doj/doj-project.jpg" data-caption=""><img src="assets/doj/doj-project-md.jpg" alt="Независимая клоунада «ДОЖ»" width="640" height="640" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="doj"><button type="button" class="ph" data-full="assets/doj/fifa-2017.jpg" data-caption=""><img src="assets/doj/fifa-2017-md.jpg" alt="Аккредитация на Кубок конфедераций FIFA 2017" width="640" height="800" loading="lazy"></button></figure>
+      <figure class="m-item" data-cat="doj"><button type="button" class="ph" data-full="assets/doj/burning-man-2015.jpg" data-caption=""><img src="assets/doj/burning-man-2015-md.jpg" alt="Независимая клоунада «ДОЖ» на Burning Man Decompression 2015" width="640" height="640" loading="lazy"></button></figure>
+    </div>
+    <div class="more-row"><button type="button" class="btn btn-brass" id="moreBtn">Показать все фото</button></div>
+    <p class="gal-hint">Нажмите на фото, чтобы увеличить.</p>
+  </div>
+</section>
+
+<section id="skills" class="scallop-top">
+  <div class="wrap">
+    <p class="eyebrow">Навыки</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Что мы прокачиваем на занятиях</h2>
+    <p class="lead" style="margin-top:14px">Это пять основ актерского мастерства. Каждая пригодится на сцене и так же хорошо работает в обычной жизни.</p>
+    <ul class="skill-list">
+      <li>
+        <h3>Сценическое внимание</h3>
+        <div class="skill-text">
+          <p>Главный инструмент актера. Учимся замечать детали, слушать и удерживать фокус на партнере, задаче и зрителе, не отвлекаясь на собственное волнение.</p>
+          <p class="in-life"><b>В жизни</b>Спокойнее под чужими взглядами, проще сосредоточиться и быть в моменте.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Воображение и фантазия</h3>
+        <div class="skill-text">
+          <p>Учимся представить место, время и событие и действовать в них так, будто всё происходит на самом деле. В театре это называют верой в предлагаемые обстоятельства.</p>
+          <p class="in-life"><b>В жизни</b>Гибкое мышление, смелость придумывать и находить нестандартные решения.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Сценическая речь</h3>
+        <div class="skill-text">
+          <p>Дыхание, голос, дикция и логика фразы. Работаем над тем, чтобы каждое слово было слышно в последнем ряду, а голос звучал свободно и не уставал.</p>
+          <p class="in-life"><b>В жизни</b>Вас слышат и слушают: на совещании, на празднике, в разговоре по телефону.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Партнерство на сцене</h3>
+        <div class="skill-text">
+          <p>На сцене всё строится на взаимодействии. Учимся слышать партнера, отвечать на его действия, доверять и вместе вести одну историю.</p>
+          <p class="in-life"><b>В жизни</b>Живое общение, умение слушать собеседника и легче находить общий язык с людьми.</p>
+        </div>
+      </li>
+      <li>
+        <h3>Язык театра</h3>
+        <div class="skill-text">
+          <p>Разбираемся, как устроен спектакль: действие, событие, мизансцена, жанр, сверхзадача. Эти понятия помогают и играть самим, и смотреть чужие спектакли.</p>
+          <p class="in-life"><b>В жизни</b>Театр становится понятнее и интереснее, а наши походы в театр и разборы после — глубже.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="course" class="band-velvet">
+  <div class="wrap">
+    <p class="eyebrow">Программа на 6 месяцев</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">От первого занятия до спектакля</h2>
+    <p class="lead" style="margin-top:14px">У курса два этапа, и у каждого есть понятный итог. Присоединиться можно в любой месяц первого этапа.</p>
+    <div class="path" id="path">
+      <div class="stop">
+        <p class="when">Ноябрь</p>
+        <div class="dot"></div>
+        <h3>Первые занятия</h3>
+        <p>Знакомство, упражнения на внимание и доверие. Никто не выходит «на сцену» в первый же вечер.</p>
+      </div>
+      <div class="stop">
+        <p class="when">Месяцы 1–3 · февраль</p>
+        <div class="dot"></div>
+        <h3>«Выход»: публичное выступление</h3>
+        <p>Речь, тренинг, импровизация. Итог: трехминутное выступление перед зрителями на заданную тему.</p>
+      </div>
+      <div class="stop final">
+        <p class="when">Месяцы 4–6 · май</p>
+        <div class="dot"></div>
+        <h3>«Спектакль»</h3>
+        <p>Этюды, сцены, диалоги и репетиции. Итог: спектакль для друзей и родных.</p>
+      </div>
+    </div>
+    <div class="theatre-note">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4V5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 5v12" stroke="currentColor" stroke-width="1.8" stroke-dasharray="2 2"/></svg>
+      <p><b>Раз в месяц ходим в театр Краснодара всей группой, после спектакля разбираем его вместе.</b> Это бонус к абонементу. Билет каждый покупает сам.</p>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="scallop-top">
+  <div class="wrap">
+    <p class="eyebrow">Расписание</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Вечером, когда работа уже позади</h2>
+    <div class="sched">
+      <div class="slot main">
+        <span class="tag">Группа 1 · каждую неделю</span>
+        <p class="day">Вторник</p>
+        <p class="time">19:30–21:30</p>
+        <p>Раз в неделю, 2 часа. Группа от 2 до 10 человек.</p>
+      </div>
+      <div class="slot">
+        <span class="tag">Группа 2 · потенциально</span>
+        <p class="day">Суббота или воскресенье</p>
+        <p class="time">время уточняется</p>
+        <p>Откроем, если наберется группа. Если вам удобнее в выходные, напишите — запишу в лист ожидания.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="tint">
+  <div class="wrap">
+    <p class="eyebrow">Цены</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Абонементы</h2>
+    <p class="lead" style="margin-top:14px">Занятие длится 2 часа, раз в неделю. В месяц 4 занятия.</p>
+    <div class="price-grid">
+      <div class="plan">
+        <p class="p-name">1 месяц</p>
+        <p class="p-price">4 000 ₽</p>
+        <p class="p-per">4 занятия · 1 000 ₽ за занятие</p>
+        <p class="p-desc">Чтобы попробовать в своем ритме.</p>
+      </div>
+      <div class="plan feat">
+        <p class="p-name">3 месяца · до выступления</p>
+        <p class="p-price">11 400 ₽</p>
+        <p class="p-per">12 занятий · 3 800 ₽ в месяц</p>
+        <p class="p-desc">Весь этап «Выход» и ваше первое выступление перед зрителями.</p>
+      </div>
+      <div class="plan">
+        <p class="p-name">6 месяцев · до спектакля</p>
+        <p class="p-price">21 600 ₽</p>
+        <p class="p-per">24 занятия · 3 600 ₽ в месяц</p>
+        <p class="p-desc">Весь курс: выступление и спектакль.</p>
+      </div>
+    </div>
+    <div class="extras">
+      <table>
+        <tbody>
+          <tr><td>Абонемент на двоих<small>Пара, подруги, мама и дочь 18+. Скидка 10% к любому абонементу</small></td><td>7 200 / 20 500 / 38 900 ₽</td></tr>
+          <tr><td>Пробное занятие<small>Бесплатно, если в тот же день купить абонемент</small></td><td>500 ₽</td></tr>
+          <tr><td>Разовое занятие, 2 часа<small>Без покупки абонемента</small></td><td>1 500 ₽</td></tr>
+          <tr><td>Индивидуальное занятие, 1 час<small>Тост, выступление, собеседование</small></td><td>2 500 ₽</td></tr>
+          <tr><td>Подарочный сертификат<small>Месяц занятий или индивидуальное занятие</small></td><td>4 000 / 2 500 ₽</td></tr>
+          <tr><td>Приведи друга<small>Скидка обоим на следующий абонемент</small></td><td>−500 ₽</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="trial">
+  <div class="wrap trial">
+    <div>
+      <p class="eyebrow">Пробное занятие</p>
+      <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Приходите посмотреть, как это устроено</h2>
+      <ol class="steps">
+        <li><p><b>Запишитесь</b> по телефону или в MAX на первую встречу 10 ноября в 19:30.</p></li>
+        <li><p><b>Приходите в удобной одежде.</b> Готовиться и что-то учить не нужно.</p></li>
+        <li><p><b>Позанимайтесь вместе с группой</b> два часа, а в конце решите, продолжать ли.</p></li>
+      </ol>
+    </div>
+    <div class="trial-card">
+      <p class="eyebrow">Стоимость</p>
+      <p class="big">500 ₽</p>
+      <p class="cond">Если в день пробного вы покупаете абонемент, эти 500 ₽ идут в его стоимость. Пробное выходит бесплатным.</p>
+      <p style="color:var(--ink-soft)">Оплата переводом или по QR-коду. На каждую оплату вы получаете чек.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="tint">
+  <div class="wrap">
+    <p class="eyebrow">Как всё устроено</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Частые вопросы</h2>
+    <div class="faq">
+      <details open>
+        <summary>У меня нет никакого опыта. Мне можно?</summary>
+        <p>Да, занятия рассчитаны на новичков. Большинство учеников приходят без опыта, а кто-то впервые за много лет делает что-то только для себя.</p>
+      </details>
+      <details>
+        <summary>Мне за 40 (50, 60). Не поздно?</summary>
+        <p>Нет. Занятия для взрослых от 18 лет. Возраст и разный жизненный опыт как раз делают сцены живыми.</p>
+      </details>
+      <details>
+        <summary>Обязательно выступать перед зрителями?</summary>
+        <p>Выступление и спектакль — это цель курса, к ним мы готовимся постепенно. К февралю выход на сцену уже не пугает. Если вы пока не готовы, это можно обсудить лично.</p>
+      </details>
+      <details>
+        <summary>Что, если я пропущу занятие?</summary>
+        <p>Одно занятие в месяц можно перенести, если предупредить за 24 часа. Срок абонемента тогда продлевается на неделю. Пропуск без предупреждения считается проведенным занятием. Если занятие отменяет педагог, абонемент продлевается для всех.</p>
+      </details>
+      <details>
+        <summary>Сколько действует абонемент?</summary>
+        <p>Абонемент на месяц — 5 недель с первого занятия, на 3 месяца — 14 недель, на 6 месяцев — 27 недель. На январские каникулы срок продлевается автоматически.</p>
+      </details>
+      <details>
+        <summary>Можно ли вернуть деньги?</summary>
+        <p>Да. Возвращаем стоимость занятий, которые еще не прошли. Деньги переводим в течение 10 дней после заявления.</p>
+      </details>
+      <details>
+        <summary>Что взять с собой?</summary>
+        <p>Удобную одежду, в которой можно двигаться, сменную обувь или носки и воду.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap" style="padding-block:72px">
+    <div style="display:grid;gap:16px;min-width:0">
+      <p class="eyebrow">Запись</p>
+      <h2>Ваше место в зале свободно</h2>
+      <p style="font-size:18px">Позвоните или напишите в MAX. Расскажу, как проходит пробное, и запишу на удобный день.</p>
+    </div>
+    <div class="phone-box">
+      <p class="eyebrow">Телефон и MAX · Евгения</p>
+      <p class="phone" id="phone">8 918 227 24 07</p>
+      <div class="cta-row" style="margin-top:0">
+        <a class="btn btn-brass" href="tel:+79182272407">Позвонить</a>
+        <button class="btn btn-ghost" id="copyBtn" type="button">Скопировать номер</button>
+      </div>
+      <p class="copy-msg" id="copyMsg" aria-live="polite"></p>
+      <div class="addr">
+        <p class="eyebrow">Адрес</p>
+        <b>пос. Яблоновский, ул. Дорожная, 150</b>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Просмотр фото">
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+  <button type="button" class="x" id="lbClose" aria-label="Закрыть">×</button>
+  <button type="button" class="prev" id="lbPrev" aria-label="Предыдущее фото">‹</button>
+  <button type="button" class="next" id="lbNext" aria-label="Следующее фото">›</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Уроки актерского мастерства для взрослых · Яблоновский · 18+</p>
+    <p>Занятия ведет самозанятый педагог. Оферта и правила — по запросу.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn'), msg=document.getElementById('copyMsg'), ph=document.getElementById('phone');
+  btn.addEventListener('click',function(){
+    var text='8 918 227 24 07';
+    function fallback(){
+      var r=document.createRange(); r.selectNodeContents(ph);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      msg.textContent='Номер выделен — скопируйте его.';
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){msg.textContent='Номер скопирован.';},fallback);
+      } else fallback();
+    }catch(e){fallback();}
+  });
+  function sizeLines(){
+    var stops=document.querySelectorAll('#path .stop');
+    if(stops.length<2) return;
+    var w=stops[1].getBoundingClientRect().left-stops[0].getBoundingClientRect().left;
+    stops.forEach(function(s){s.style.setProperty('--w',w+'px');});
+  }
+  sizeLines(); window.addEventListener('resize',sizeLines);
+})();
+</script>
+
+<script>
+(function(){
+  var all=[].slice.call(document.querySelectorAll('.masonry .ph')), phs=all;
+  if(!phs.length) return;
+  var lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cap=document.getElementById('lbCap'), cur=0, opener=null;
+  function show(i){
+    cur=(i+phs.length)%phs.length;
+    img.src=phs[cur].getAttribute('data-full');
+    img.alt=phs[cur].querySelector('img').alt;
+    cap.textContent=phs[cur].getAttribute('data-caption')||'';cap.hidden=!cap.textContent;
+  }
+  function open(i){opener=phs[i];show(i);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lbClose').focus();}
+  function close(){lb.hidden=true;document.body.style.overflow='';img.removeAttribute('src');if(opener)opener.focus();}
+  all.forEach(function(b){b.addEventListener('click',function(){phs=all.filter(function(x){return !x.closest('[hidden]');});open(phs.indexOf(b));});});
+  var tabs=[].slice.call(document.querySelectorAll('.tab')), figs=[].slice.call(document.querySelectorAll('.m-item'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    var f=t.getAttribute('data-filter');
+    tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t?'true':'false');});
+    cur_f=f; apply();
+  });});
+  var LIMIT=12, cur_f='all', expanded=false, more=document.getElementById('moreBtn');
+  function apply(){
+    var n=0;
+    figs.forEach(function(el){
+      var ok=(cur_f==='all'||el.getAttribute('data-cat')===cur_f);
+      if(ok&&cur_f==='all'&&!expanded){n++; if(n>LIMIT) ok=false;}
+      el.hidden=!ok;
+    });
+    more.parentNode.hidden=!(cur_f==='all'&&!expanded&&figs.length>LIMIT);
+    more.textContent='Показать все '+figs.length+' фото';
+  }
+  more.addEventListener('click',function(){expanded=true;apply();});
+  apply();
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();show(cur-1);});
+  document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();show(cur+1);});
+  lb.addEventListener('click',function(e){if(e.target===lb) close();});
+  document.addEventListener('keydown',function(e){
+    if(lb.hidden) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') show(cur-1);
+    else if(e.key==='ArrowRight') show(cur+1);
+  });
+  var x0=null;
+  lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50) show(cur+(dx<0?1:-1));x0=null;});
+})();
+</script>
+</body>
+</html>
