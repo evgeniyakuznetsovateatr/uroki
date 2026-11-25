@@ -267,6 +267,12 @@ section{padding-block:88px;position:relative}
 footer{padding-block:28px;font-size:14px;color:var(--ink-soft)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 
+/* reviews */
+.reviews{margin-top:34px;column-count:2;column-gap:22px}
+.rv{break-inside:avoid;margin:0 0 22px;display:flex;justify-content:center;padding:22px;border-radius:22px;background:#A9CDEB;background:linear-gradient(160deg,#B7D6F0,#9FC6E8)}
+.rv img{display:block;width:100%;height:auto;max-width:100%;filter:drop-shadow(0 6px 14px rgba(36,22,26,.12))}
+@media (max-width:760px){.reviews{column-count:1}.rv{padding:14px;border-radius:18px}}
+
 /* gift certificates */
 .gift-opts{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .gift-opt{text-align:left;display:grid;align-content:start;gap:6px;padding:20px 22px;border-radius:16px;border:2px solid rgba(246,235,221,.22);background:rgba(246,235,221,.05);color:var(--on-velvet);cursor:pointer;font:inherit;transition:border-color .2s ease,background .2s ease}
@@ -478,6 +484,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         </div>
       </li>
     </ul>
+  </div>
+</section>
+
+<section id="reviews" class="tint">
+  <div class="wrap">
+    <p class="eyebrow">Отзывы</p>
+    <h2 style="font-size:clamp(32px,4.4vw,48px);margin-top:12px">Что пишут ученики после занятий</h2>
+    <p class="lead" style="margin-top:14px">Сообщения из чата группы 1 — как есть, без правок.</p>
+    <div class="reviews">
+      <figure class="rv"><img src="assets/reviews/review-1.webp" width="326" height="242" loading="lazy" alt="Отзыв из чата группы: «Присоединяюсь к отзыву по вчерашнему занятию. Было здорово! Евгения, благодарю за энергию и умение вовлечь каждого на занятиях, а участников группы за теплую атмосферу. Мне нравится, что занятия проходят очень динамично, насыщенно и 2 часа пролетают незаметно. После рабочего дня — это отличная разгрузка.»"></figure>
+      <figure class="rv"><img src="assets/reviews/review-2.webp" width="348" height="113" loading="lazy" alt="Отзыв из чата группы: «Женя, сегодня занятие было еще круче, у меня челюсть устала улыбаться. Это было великолепно.»"></figure>
+      <figure class="rv"><img src="assets/reviews/review-3.webp" width="379" height="99" loading="lazy" alt="Отзыв из чата группы: «Евгения, капец вы зарядили) Мы уже дома хором начали упражнения на дикцию делать.»"></figure>
+      <figure class="rv"><img src="assets/reviews/review-4.webp" width="325" height="180" loading="lazy" alt="Отзыв из чата группы: «Согласен. Первое занятие было вводное, хорошее, продуктивное, но лично у меня эмоций не вызвало тогда (да, вот такой я человек). Сегодня уже чуть подзарядился по ходу пьесы. Ну и плюс время второго часа пролетело, как миг. Что очень показательно.»"></figure>
+    </div>
   </div>
 </section>
 
